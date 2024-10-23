@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Rafat!</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: url('https://www.wallpaperflare.com/static/444/241/208/book-books-read-reading-wallpaper.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #4a148c;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .curtain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #000000, #4a148c, #000000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: openCurtain 4s forwards;
+        }
+
+        @keyframes openCurtain {
+            0% { width: 100%; }
+            100% { width: 0%; }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #ff4081;
+            text-shadow: 0 0 10px #ff4081;
+            margin-top: 30px;
+            animation: glow 1.5s infinite alternate;
+            z-index: 10;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px #ff4081;
+            }
+            to {
+                text-shadow: 0 0 50px #ff4081, 0 0 70px #ff4081;
+            }
+        }
+
+        .birthday-message {
+            width: 80%;
+            max-width: 800px;
+            background: rgba(255, 224, 178, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            color: #4e342e;
+            font-size: 1.5em;
+            line-height: 1.5em;
+            text-align: justify;
+            border: 2px solid #ffb74d;
+            z-index: 1;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .message {
+            font-size: 2em;
+            color: #8d6e63;
+            margin: 40px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .balloon-container {
+            position: absolute;
+            bottom: -200px;
+            left: 0;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background-color: #ff4081;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: floatBalloon 6s ease-in-out infinite;
+        }
+
+        .balloon:nth-child(odd) {
+            background-color: #ffca28;
+        }
+
+        @keyframes floatBalloon {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-300px); }
+            100% { transform: translateY(0); }
+        }
+
+        #particle-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <audio id="birthdaySong" src="https://www.bensound.com/bensound-music/bensound-littleplanet.mp3" autoplay loop></audio>
+
+    <div class="curtain">
+        <h1>Happy Birthday, Rafat!</h1>
+    </div>
+
+    <div class="balloon-container">
+        <div class="balloon" style="left: 20%;"></div>
+        <div class="balloon" style="left: 40%;"></div>
+        <div class="balloon" style="left: 60%;"></div>
+        <div class="balloon" style="left: 80%;"></div>
+    </div>
+
+    <div id="particle-js"></div>
+
+    <div class="birthday-message">
+        <p>Hey Rafat! 🎉 Wishing you the happiest of birthdays! I hope your special day is filled with all the things that make you smile, just like you’ve always managed to bring a smile to my face. From the first time I met you back in class 2, you've always been someone I admired, and that hasn’t changed one bit. You’re kind, talented, and an amazing person, and I’m so glad to have known you for all these years. May this year bring you closer to your dreams and fill your life with happiness and success. Enjoy your day to the fullest, and know that I’ll always be cheering you on! Happy Birthday once again! 🎂🎉</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+        particlesJS("particle-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ff4081"
+                },
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true
+                },
+                "size": {
+                    "value": 5,
+                    "random": true
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3
+                }
+            }
+        });
+    </script>
+</body>
+</html>
